@@ -37,8 +37,8 @@ function App() {
         document.getElementById("selectCSV").value = _.data.files[0].id;
         let data = _.data.files;
         if(data.length === batchRequests.length) return;
-        setBatchRequests(data)
-        return alert("Your file has been successfully uploaded!");
+        setBatchRequests(data);
+        return;
       })
       .catch(err => console.error(err));
     return;
@@ -126,6 +126,7 @@ function App() {
       .then(_ =>  _.json())
       .then(_ => {
         doSelectedFile(); 
+        return alert("Your file has been successfully uploaded!");
       });
   }
 
