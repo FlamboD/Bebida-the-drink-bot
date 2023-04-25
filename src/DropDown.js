@@ -12,7 +12,7 @@ function DropDown(options) {
     options = options.data;
     let values;
     if (options.domain.data) {
-        values = options.domain.data.map(_ => <option key={`${_.filename}_${_.id}`} value={_.id}>{_.filename} ({_.timestamp})</option>)
+        values = options.domain.data.map(_ => <option key={`${_.filename}_${_.id}`} value={_.id}>{_.filename} ({new Date(_.timestamp).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric", hour:"numeric", minute:"numeric"})})</option>)
     } else {
         values = options.domain.values.map(_ => <option key={`${options.name}_${_}`} value={_} hidden={_ === "NA"}>{_}</option>);
     }

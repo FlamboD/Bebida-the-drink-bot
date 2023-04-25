@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Bebida: The drink suggestion bot
+_An interface to interact with the [UP2TOM API](https://docs.up2tom.com/)_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
+- [Bebida: The drink suggestion bot](#bebida-the-drink-suggestion-bot)
+  - [Table of contents](#table-of-contents)
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Drink suggestion form](#drink-suggestion-form)
+    - [Batch drink suggestions](#batch-drink-suggestions)
+  - [Technologies Used](#technologies-used)
+  - [My Additions](#my-additions)
+  - [Known Problems](#known-problems)
+  - [License](#license)
 
-## Available Scripts
+## Description
+Bebida will recommend a drink for you based on a set of criteria:
+- The current temperature
+- Your gender
+- Your age
+- Whether you are sensitive to caffeine
+- The time of day
+- Whether you are pregnant
+- Whether you are health conscious
+- How many drink you have per day
+- How many drink you have had today
 
-In the project directory, you can run:
+## Installation
+You will need the [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line) and [Node.js](https://nodejs.org/en) to set up the project.
 
-### `npm start`
+Clone this repository onto your local storage with the command 
+`git clone https://github.com/FlamboD/Bebida-the-drink-bot.git`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Navigate into the newly created directory and install the required node packages with the command
+`npm install`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Once the installation is complete, you can run the application with the command
+`npm start`
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Drink suggestion form
+The first section you will see is a form gathering information about you and your environment. Fill out the form and press the `Submit` button, Bebida will use the information you have entered to recommend a drink for you.
 
-### `npm run build`
+Once Bebida has recommended a drink, you can press the `x` at the top right corner of the pop up window or the `Ask Bebida to suggest another drink` button to close the popup window.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+From here you can edit the form and resubmit or you can reset the form with the 'Reset' button.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Batch drink suggestions
+To access the bulk suggestions form, click the tab at the top of the form with the text `Batch`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You will be presented with a form with two sections. One to upload a file and one to  download a file.
 
-### `npm run eject`
+You can upload a pipe-delimited CSV file, like the one provided [in the project](./resources/Drinks.csv). After clicking the `Upload` button you will be notified if your upload was a success.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To view the results of the CSV, you need to select the file you uploaded from the drop down list. It will have the same name as the file you uploaded as well as the date the file was uploaded. Once selected, clicking the `Download` button will download a pipe-delimited CSV file yo your device with the suggested drink for each row as well as how confident Bebida is that this is the correct drink to suggest.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can navigate back to the initial form by clicking the `Singular` tab at the top of the form.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies Used
+- [Node.js](https://nodejs.org/en)
+- [React.js](https://react.dev/)
+- [TailwindCss](https://tailwindcss.com/)
+- [RESTful API](https://restfulapi.net/)
+- [UP2TOM API](https://docs.up2tom.com/)
+- [GitHub](https://github.com/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## My Additions
+#Implementation of UP2TOM batch API
+You can upload CSV files to evaluate the suggested drink for many different variable configurations in a short amount of time.
 
-## Learn More
+You can also download the evaluated files uploaded by other users.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Known Problems
+Despite using a great configuration of variables, the UP2TOM API always responds with the `Water / Fruit Juice` option.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+[MIT License](LICENSE.md)

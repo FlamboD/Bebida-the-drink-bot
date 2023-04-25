@@ -194,6 +194,7 @@ function App() {
             >Submit</button>
         </form>
         <div className={`${Tabs[1].active[0]?"":"hidden"} w-full m-auto bg-white shadow-md shadow-orange-900 rounded rounded-tl-none px-8 pt-6 pb-8 mb-4`}>
+          <h1 className='text-md font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-2xl'>Upload CSV file</h1>
           <form
             id='drinkBatchPredictionFormUpload' 
             className={`w-full grid grid-cols-1 gap-1`} 
@@ -208,9 +209,10 @@ function App() {
                 className='shadow shadow-orange-900 appearance-none border rounded w-full py-2 px-3 text-grey-700 leading-tight focus:outline-none focus:shadow-outline'
                 >Upload</button>
           </form>
+          <h1 className='mt-6 text-md font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-2xl'>Download CSV file</h1>
           <form
             id='drinkBatchPredictionFormDownload' 
-            className={`w-full grid grid-cols-1 gap-1 mt-6`} 
+            className={`w-full grid grid-cols-1 gap-1`} 
             action={`https://api.up2tom.com/v3/batch/58d3bcf97c6b1644db73ad12/fileId`}
             method='POST'
             onSubmit={e => downloadCSV(e)}>
