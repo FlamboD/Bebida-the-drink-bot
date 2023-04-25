@@ -76,4 +76,4 @@ You can also download the evaluated files uploaded by other users.
 Despite using a great configuration of variables, the UP2TOM API always responds with the `Water / Fruit Juice` option.
 
 ## License
-[MIT License](LICENSE.md)
+[MIT License](LICENSE)
