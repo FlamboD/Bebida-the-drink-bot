@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: lightyellow;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Tab:not(:first-child)::before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+
+  position: absolute;
+  left: -1rem;
+  bottom: 0;
+
+  z-index: 2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Tab:not(.active) {
+  background-color: gainsboro;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Tab::after {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+
+  position: absolute;
+  right: -1rem;
+  bottom: 0;
+  z-index: 2;
 }
 
-.App-link {
-  color: #61dafb;
+.Tab.active::before {
+  background-image: radial-gradient(circle at top left, transparent 0, transparent 70%, white 75%, white 100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Tab.active::after {
+  background-image: radial-gradient(circle at top right, transparent 0, transparent 70%, white 75%, white 100%);
+}
+
+.Tab:first-child {
+  --tw-shadow-first: -5px 0 5px -4px #7C2D12;
+}
+
+.Tab:not(:first-child) {
+  --tw-shadow-first: 0 0 0 0 #000;
 }
